@@ -13,13 +13,8 @@ public class CalculationMethods {
 
 
     public int midsales(long[] months) {
-        int amount = 0;
-
-        for (int i = 0; i < months.length; i++) {
-            amount += months[i];
-        }
-
-        return amount / months.length;
+        int midAmount = amountofsales(months) / months.length;
+        return midAmount;
     }
 
 
@@ -52,34 +47,26 @@ public class CalculationMethods {
 
 
     public int UnderMidOfMonths(long[] months) {
-        int amount = 0;
-        int AmountOfMonths = 0;
-
+        int amountOfMonths = 0;
+        int midAmount = midsales(months);
         for (int i = 0; i < months.length; i++) {
-            amount += months[i];
-        }
-        for (int i = 0; i < months.length; i++) {
-            if (months[i] < amount / months.length) {
-                AmountOfMonths++;
+            if (months[i] < midAmount) {
+                amountOfMonths++;
             }
         }
-        return AmountOfMonths;
+        return amountOfMonths;
     }
 
 
     public int UpMidOfMonths(long[] months) {
-        int amount = 0;
-        int AmountOfMonths = 0;
-
+        int midAmount = midsales(months);
+        int amountOfMonths = 0;
         for (int i = 0; i < months.length; i++) {
-            amount += months[i];
-        }
-        for (int i = 0; i < months.length; i++) {
-            if (months[i] > amount / months.length) {
-                AmountOfMonths++;
+            if (months[i] > midAmount) {
+                amountOfMonths++;
             }
         }
-        return AmountOfMonths;
+        return amountOfMonths;
     }
 
 }
